@@ -1,4 +1,6 @@
-import 'package:flutter/material.dart'; 
+import 'package:flutter/material.dart';
+
+import 'Home_Screen/Components/custom_appBar.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -10,19 +12,16 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-
-    final Size screenSize = MediaQuery.of(context).size; 
+    final Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
-
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.grey, 
-        child: const Icon(Icons.cast), 
-        onPressed: => print('Cast'); 
-      ), 
-      appBar: PreferredSize(
-        prefferedSize: Size(screenSize.width, 50.0), 
-        child: CustomAppBar()
-      )
-    );
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: Colors.grey,
+          onPressed: () => print('Cast'),
+          child: const Icon(Icons.cast),
+        ),
+        appBar: PreferredSize(
+          preferredSize: Size(screenSize.width, 50.0),
+          child: CustomAppBar(),
+        ));
   }
-} 
+}

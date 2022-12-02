@@ -7,21 +7,17 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Netflix Ui',
-      debugShowCheckedModeBanner: false, 
-      scaffoldBackgroundColor:Colors.black, 
+      debugShowCheckedModeBanner: false,
+      scaffoldBackgroundColor: Colors.black,
       theme: ThemeData(
-        
         primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlaformDensity, 
+        visualDensity: VisualDensity.adaptivePlaformDensity,
       ),
-      home: const HomeScreen (),
+      home: const HomeScreen(),
     );
   }
 }
-  
-  
