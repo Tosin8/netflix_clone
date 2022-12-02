@@ -11,7 +11,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
 
-    final Size screenSize = MediaQuery.of(context
+    final Size screenSize = MediaQuery.of(context).size; 
     return Scaffold(
 
       floatingActionButton: FloatingActionButton(
@@ -21,6 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ), 
       appBar: PreferredSize(
         prefferedSize: Size(screenSize.width, 50.0), 
+        child: CustomAppBar()
       )
     );
   }
