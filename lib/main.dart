@@ -12,12 +12,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Netflix Ui',
+      debugShowCheckedModeBanner: false, 
+      scaffoldBackgroundColor:Colors.black, 
       theme: ThemeData(
         
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlaformDensity, 
       ),
-      home: const MyHomePage(),
+      home: const Scaffold(),
     );
   }
 }
