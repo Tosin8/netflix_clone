@@ -10,12 +10,17 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+
+    final Size screenSize = MediaQuery.of(context
     return Scaffold(
 
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.grey, 
         child: const Icon(Icons.cast), 
         onPressed: => print('Cast'); 
+      ), 
+      appBar: PreferredSize(
+        prefferedSize: Size(screenSize.width, 50.0), 
       )
     );
   }
