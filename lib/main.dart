@@ -11,10 +11,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter Netflix Ui',
       theme: ThemeData(
         
         primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlaformDensity, 
       ),
       home: const MyHomePage(),
     );
