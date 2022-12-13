@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'Home_Screen/Components/custom_appBar.dart';
+import 'Components/custom_appBar.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -10,6 +10,19 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  late  double _scrollOffset = 0.0;
+  late ScrollController _scrollController;
+
+  void iniState() {
+    _scrollController = ScrollController()
+      ..addListener(() {
+        setState(() {
+          _scrollOffset = _scrollController.offset;
+        });
+      });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
@@ -21,7 +34,8 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         appBar: PreferredSize(
           preferredSize: Size(screenSize.width, 50.0),
-          child: CustomAppBar(),
-        ));
+          child: CustomAppBar(scrollOffset: _scrollOffset),
+        ),
+        body: CustomScrollView(controller: _scrollController));
   }
 }

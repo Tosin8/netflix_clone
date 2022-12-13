@@ -3,11 +3,15 @@ import 'dart:core';
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget {
+  double scrollOffset = 0.0;
+
+  CustomAppBar({super.key, required double scrollOffset});
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 24.0),
-      color: Colors.orange,
+      color:
+          Colors.black.withOpacity((scrollOffset / 350).clamp(0, 1).toDouble()),
       child: SafeArea(
         child: Row(children: [
           Image.asset('assets/images/logo.png'),
