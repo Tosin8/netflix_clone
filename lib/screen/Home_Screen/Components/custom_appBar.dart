@@ -1,3 +1,5 @@
+import 'dart:core';
+
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -10,9 +12,17 @@ class CustomAppBar extends StatelessWidget {
         child: Row(children: [
           Image.asset('assets/images/logo.png'),
           const SizedBox(width: 12.0),
-          Row(
-            children: const [_AppBarButton()],
-          )
+          Expanded(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                _AppBarButton(
+                    title: 'TV Shows', onTap: () => print('TV Shows')),
+                _AppBarButton(title: 'Movies', onTap: () => print('Movies')),
+                _AppBarButton(title: 'My List', onTap: () => print('My List')),
+              ],
+            ),
+          ),
         ]),
       ),
     );
@@ -20,19 +30,24 @@ class CustomAppBar extends StatelessWidget {
 }
 
 class _AppBarButton extends StatelessWidget {
+  final String title;
+  final Function onTap;
+
   const _AppBarButton({
     Key? key,
+    required this.title,
+    required this.onTap,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => print('TV Shows'),
-      child: const Text('TV Shows',
-          style: TextStyle(
+      onTap: onTap,
+      child: Text(title,
+          style: const TextStyle(
               color: Colors.white,
               fontSize: 16.0,
-              fontWeight: FontWeight.bold)),
+              fontWeight: FontWeight.w800)),
     );
   }
 }
