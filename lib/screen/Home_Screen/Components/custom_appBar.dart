@@ -6,9 +6,11 @@ class CustomAppBar extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 24.0),
       color: Colors.orange,
-      child: Row(children: [
-        Image.asset(''),
-      ]),
+      child: SafeArea(
+        child: Row(children: [
+          Image.asset('assets/images/logo.png'),
+        ]),
+      ),
     );
   }
 }
