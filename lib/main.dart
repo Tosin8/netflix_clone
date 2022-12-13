@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'screen/home_screen.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -12,10 +14,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Netflix Ui',
       debugShowCheckedModeBanner: false,
-      scaffoldBackgroundColor: Colors.black,
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlaformDensity,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        scaffoldBackgroundColor: Colors.black,
       ),
       home: const HomeScreen(),
     );
