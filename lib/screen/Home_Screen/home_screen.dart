@@ -10,7 +10,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  late  double _scrollOffset = 0.0;
+  late double _scrollOffset = 0.0;
   late ScrollController _scrollController;
 
   void iniState() {
@@ -23,10 +23,10 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
   }
 
-  @override 
+  @override
   void dispose() {
-_scrollController.dispose()
-super.dispose(); 
+    _scrollController.dispose();
+    super.dispose();
   }
 
   @override
@@ -42,6 +42,13 @@ super.dispose();
           preferredSize: Size(screenSize.width, 50.0),
           child: CustomAppBar(scrollOffset: _scrollOffset),
         ),
-        body: CustomScrollView(controller: _scrollController));
+        body: CustomScrollView(
+          controller: _scrollController,
+          slivers: [
+            SliverToBoxAdapter(
+              child: ContentHeader(featuredContent: sintelContent),
+            ),
+          ],
+        ));
   }
 }
