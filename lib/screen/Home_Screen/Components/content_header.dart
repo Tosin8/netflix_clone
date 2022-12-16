@@ -16,6 +16,7 @@ class ContentHeader extends StatelessWidget {
           decoration: BoxDecoration(
               image: DecorationImage(
             image: AssetImage(featuredContent.imageUrl),
+            fit: BoxFit.cover,
           )),
         )
       ],
