@@ -33,8 +33,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
+        extendBodyBehindAppBar: true,
         floatingActionButton: FloatingActionButton(
-          backgroundColor: Colors.grey,
+          backgroundColor: Colors.grey[850],
           onPressed: () => print('Cast'),
           child: const Icon(Icons.cast),
         ),
