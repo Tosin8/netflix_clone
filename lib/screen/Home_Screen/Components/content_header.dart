@@ -32,7 +32,12 @@ class ContentHeader extends StatelessWidget {
         Positioned(
             bottom: 110,
             child: SizedBox(
-                width: 250, child: Image.asset(featuredContent.titleImageUrl)))
+                width: 250, child: Image.asset(featuredContent.titleImageUrl))),
+        Positioned(
+            left: 0,
+            right: 0,
+            bottom: 40.0,
+            child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly)),
       ],
     );
   }
