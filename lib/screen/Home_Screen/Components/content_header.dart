@@ -63,6 +63,16 @@ class _PlayButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return FlatButton.icon(
+      onPressed: () => print('Play'),  
+      color: Colors.white, 
+      icon: Icon(Icons.play_arrow, size: 30.0), 
+      label: Text(
+        'Play',
+       style: TextStyle(
+        fontSize: 16.0, 
+        fontWeight: FontWeight.w600, 
+      ))
+    );
   }
 }
