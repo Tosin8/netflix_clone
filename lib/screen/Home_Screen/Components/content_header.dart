@@ -57,3 +57,12 @@ class ContentHeader extends StatelessWidget {
     );
   }
 }
+
+class _PlayButton extends StatelessWidget {
+  const _PlayButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
