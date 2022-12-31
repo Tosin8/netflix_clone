@@ -54,8 +54,8 @@ class _HomeScreenState extends State<HomeScreen> {
               sliver: SliverToBoxAdapter(
                 child: Previews(
                   title: 'Previews', 
-                  content: 
-                )
+                  contentList: previews,  
+                ), 
               ))
           ],
         ));
